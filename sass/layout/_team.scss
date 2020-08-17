@@ -1,0 +1,80 @@
+/* Команда */
+
+.team {
+  background-color: $background-secondary-color;
+}
+
+.team-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.team-list-item {
+  background-color: $background-main-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.team-list-item-info {
+  padding-top: 30px;
+  padding-right: 32px;
+  padding-bottom: 24px;
+  padding-left: 32px;
+
+  overflow: hidden;
+}
+
+.team-list-item-name,
+.team-list-item-position {
+  @include fontData(500, 16px, 1.19);
+
+  text-align: center;
+  color: $title-color;
+}
+
+.team-list-item-name {
+  margin-bottom: 10px;
+
+  .team-list-item:hover & {
+    animation: fadeInLeft 1000ms;
+  }
+}
+
+.team-list-item-position {
+  margin-top: 0;
+  margin-bottom: 16px;
+
+  font-weight: 400;
+  color: $primary-text-color;
+
+  .team-list-item:hover & {
+    animation: fadeInRight 1000ms;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

@@ -1,0 +1,154 @@
+/* Логотип в подвале */
+.logo.inverse {
+  margin-bottom: 20px;
+  margin-right: 0;
+
+  color: #ffffff;
+
+  transform-origin: top left;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.logo.inverse:hover .logo-accent,
+.logo.inverse:focus .logo-accent {
+  color: #ffffff;
+}
+
+/* Подвал */
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background-color: $background-footer-color;
+
+  > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .holder:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.footer-address-container,
+.footer-social-list-container {
+  flex-basis: 25%;
+}
+
+.footer-form-container {
+  flex-basis: 50%;
+}
+
+/* Футер адресс контейнер */
+.footer-address-list-item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.footer-address-list-item-link {
+  @include fontData(400, 14px, 1.71);
+
+  color: rgba(255, 255, 255, 0.6);
+
+  transform: scale(1);
+  transform-origin: top left;
+  transition: transform 250ms $transition-timing-function,
+    color 250ms $transition-timing-function;
+
+  &.location {
+    color: $secondary-text-color;
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+
+    transform: scale(1.1);
+  }
+}
+
+/* Футер социал.ссылки контейнер */
+.footer .social-list {
+  width: 206px;
+}
+.footer-social-list-container .text,
+.footer-form-container .text {
+  display: block;
+  margin-bottom: 20px;
+
+  @include fontData(700, 14px, 1.14);
+
+  text-transform: uppercase;
+  color: $secondary-text-color;
+}
+
+.footer .social-list-item-link {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}
+
+.footer .social-list-icon {
+  fill: #ffffff;
+}
+
+/* Футер форм контейнер */
+.footer-form {
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+
+.footer-form-input {
+  margin-right: 12px;
+  padding: 15px 16px;
+
+  width: 358px;
+  height: 50px;
+
+  @include fontData(400, 16px, 1.25);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  -webkit-text-fill-color: #ffffff;
+  box-shadow: inset 0 0 0 50px $background-footer-color;
+  outline: none;
+
+  caret-color: rgba(255, 255, 255, 0.6);
+
+  &:valid {
+    border: 1px solid $accent-color;
+  }
+
+  &:invalid:not(:placeholder-shown) {
+    border: 1px solid #ff0000;
+  }
+
+  &::placeholder {
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.footer .modal-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 28px;
+
+  transform-origin: top left;
+}
+.subscribe {
+  margin-right: 10px;
+}

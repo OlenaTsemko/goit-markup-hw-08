@@ -1,0 +1,102 @@
+/* Шапка сайта */
+
+/* чтоб зафиксировать хедер */
+/* .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 80px;
+
+  background-color: inherit;
+  z-index: 555;
+} */
+
+.header > .container,
+.navigation,
+.navigation-list,
+.header-address-list {
+  display: flex;
+  align-items: center;
+}
+.navigation-list-item:not(:last-child) {
+  margin-right: 50px;
+}
+.header-address-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+.header-address-list {
+  margin-left: auto;
+}
+.navigation-list-item .link,
+.header-address-list-item .link {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.navigation-list-item-link,
+.header-address-list-item-link {
+  @include fontData(500, 14px, 1.14);
+
+  letter-spacing: 0.02em;
+  color: $navigation-color;
+
+  transform: scale(1);
+  transform-origin: bottom center;
+  transition: transform 250ms $transition-timing-function,
+    color 250ms $transition-timing-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+
+    transform: scale(1.1);
+  }
+}
+
+.navigation-list-item-link.current {
+  position: relative;
+  /* padding-bottom: 0px; */
+
+  color: $accent-color;
+
+  &::after {
+    content: '';
+    display: block;
+
+    position: absolute;
+    bottom: 0;
+    /* margin-top: 28px; */
+
+    width: 100%;
+    height: 4px;
+
+    color: $accent-color;
+    background-color: currentColor;
+    border-radius: 2px;
+  }
+}
+
+.header-address-list-item-link {
+  display: flex;
+  align-items: center;
+
+  color: $primary-text-color;
+}
+
+.icon-address {
+  margin-right: 10px;
+  fill: currentColor;
+
+  &.envelope {
+    width: 16px;
+    height: 11px;
+  }
+  &.smartphone {
+    width: 10px;
+    height: 15px;
+  }
+}
+/* 2-ой способ чтоб иконка меняла цвет при наведении на ссылку */
+/* .header-address-list-item-link:hover .icon-address {
+  fill: $accent-color;
+} */

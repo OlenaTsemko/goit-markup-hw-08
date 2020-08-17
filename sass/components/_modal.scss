@@ -1,0 +1,252 @@
+/* Модальное окно */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  transition: opacity 500ms $transition-timing-function,
+    visibility 500ms $transition-timing-function;
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  padding: 40px;
+
+  width: 528px;
+  height: 581px;
+  background-color: #ffffff;
+  color: #212121;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transition: transform 500ms $transition-timing-function;
+
+  .backdrop.is-hidden & {
+    transform: translate(-50%, 50%);
+  }
+}
+
+.modal-form {
+  position: relative;
+
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.modal-form-text {
+  display: block;
+  margin-bottom: 30px;
+
+  @include fontData(700, 20px, 1.15);
+}
+
+.modal-form-input,
+.modal-form-message {
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 42px;
+  width: 100%;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border 250ms $transition-timing-function;
+  cursor: pointer;
+
+  /* чтоб при автозаполнении цвет бекграунда оставался белым */
+  box-shadow: 0 0 0 1000px #ffffff inset;
+
+  caret-color: $accent-color;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $accent-color;
+  }
+}
+
+.form-field {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.modal-form-label,
+.modal-message-label {
+  position: absolute;
+  top: 50%;
+  left: 42px;
+  transform: translateY(-50%);
+
+  @include fontData(400, 14px, 1.14);
+
+  letter-spacing: 0.01em;
+
+  color: $primary-text-color;
+
+  transition: transform 250ms $transition-timing-function,
+    color 250ms $transition-timing-function,
+    font-size 250ms $transition-timing-function,
+    line-height 250ms $transition-timing-function;
+}
+
+.modal-form-input:focus + .modal-form-label,
+.modal-form-input:not(:placeholder-shown) + .modal-form-label,
+.modal-form-message:focus + .modal-message-label,
+.modal-form-message:not(:placeholder-shown) + .modal-message-label {
+  font-size: 12px;
+  line-height: 1.17;
+
+  transform: translate(-26px, -40px);
+
+  color: $accent-color;
+}
+
+.modal-message-label {
+  top: 20px;
+  left: 16px;
+
+  .modal-form-message:focus + &,
+  .modal-form-message:not(:placeholder-shown) + & {
+    transform: translateY(-40px);
+  }
+}
+
+.form-field-message {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.modal-form-message {
+  height: 120px;
+  padding-left: 16px;
+  resize: none;
+}
+
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+
+  width: 18px;
+  height: 18px;
+
+  fill: currentColor;
+
+  transition: fill 250ms $transition-timing-function;
+
+  .modal-form-input:focus ~ &,
+  .modal-form-input:not(:placeholder-shown) ~ & {
+    fill: $accent-color;
+  }
+}
+
+.modal-form-policy-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.modal-form-policy-desc {
+  @include fontData(400, 14px, 1.71);
+
+  color: $primary-text-color;
+}
+
+.modal-form-policy-link {
+  color: $accent-color;
+}
+
+.modal-form-policy-icon-span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 7px;
+
+  width: 16px;
+  height: 15px;
+
+  border: 2px solid #212121;
+  border-radius: 2px;
+
+  transition: background-color 250ms $transition-timing-function,
+    border 250ms $transition-timing-function;
+
+  .modal-form-policy-input:checked + & {
+    background-color: $accent-color;
+    border: 2px solid $accent-color;
+
+    /* 2-ой способ вставить кастомный чекбокс вместо инлайн свг(спрайт) */
+    /* background-image: url(../images/icon-check.svg);
+  background-size: contain;
+  background-origin: border-box; */
+  }
+}
+
+.modal-form-policy-icon {
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.button-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  padding: 6px;
+
+  width: 30px;
+  height: 30px;
+
+  background-color: $background-main-color;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+
+.modal-form-icon-close {
+  transition: fill 250ms $transition-timing-function;
+
+  .button-close:hover &,
+  .button-close:focus & {
+    fill: $accent-color;
+  }
+}
+
+.form-btn {
+  padding: 10px 55px;
+
+  &:hover,
+  &:focus {
+    transform: scale(1);
+  }
+}
+
+/* 2-ой способ скрыть инпуты для кастомных чекбоксов (вместо вижуали хидден) */
+/* .modal-form-policy-input {
+-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; 
+} */

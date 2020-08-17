@@ -1,0 +1,63 @@
+/* Постоянные клиенты */
+.customers-list {
+  display: flex;
+  justify-content: space-between;
+}
+.customers-list-item-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+
+  width: 170px;
+  height: 90px;
+  color: #afb1b8;
+
+  transition: color 250ms $transition-timing-function,
+    border 250ms $transition-timing-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    border: 1px solid $accent-color;
+  }
+}
+
+.customers-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.icon-client-logo {
+  fill: currentColor;
+
+  &:hover,
+  &:focus {
+    fill: currentColor;
+  }
+
+  .customers-list-item-link:hover &,
+  .customers-list-item-link:focus & {
+    animation: swing 1500ms;
+    transform-origin: top center;
+  }
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
