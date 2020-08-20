@@ -1,8 +1,19 @@
 .container {
-  margin-right: auto;
-  margin-left: auto;
-  width: 1200px;
   padding-right: 15px;
   padding-left: 15px;
-  /* outline: 2px solid turquoise; */
+
+  // outline: 2px solid turquoise;
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
 }

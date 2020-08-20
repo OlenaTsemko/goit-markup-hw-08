@@ -19,72 +19,94 @@
     <!-- Шапка сайта -->
     <header class="header">
       <div class="container">
-        <nav class="navigation">
-          <a class="logo link" id="logo" href="./index.html" lang="en">
-            <span class="logo-accent">Web</span> Studio
-          </a>
+        <a class="logo link" id="logo" href="./index.html" lang="en">
+          <span class="logo-accent">Web</span> Studio
+        </a>
 
-          <ul class="navigation-list list">
-            <li class="navigation-list-item">
-              <a
-                class="navigation-list-item-link link current"
-                href="./index.html"
-                target="_blank"
-                rel="noreferrer noopener"
-                >Студия</a
-              >
+        <button
+          class="menu-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu-wrapper"
+          data-menu-button
+        >
+          <svg
+            width="40"
+            height="40"
+            aria-label="Переключатель мобильного меню"
+          >
+            <use class="icon-menu" href="./images/sprite.svg#icon-menu"></use>
+            <use
+              class="icon-close-menu"
+              href="./images/sprite.svg#icon-close-menu"
+            ></use>
+          </svg>
+        </button>
+
+        <div class="menu-wrapper section" data-menu>
+          <nav class="navigation">
+            <ul class="navigation-list list">
+              <li class="navigation-list-item">
+                <a
+                  class="navigation-list-item-link link current"
+                  href="./index.html"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Студия</a
+                >
+              </li>
+              <li class="navigation-list-item">
+                <a
+                  class="navigation-list-item-link link"
+                  href="./portfolio.html"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Портфолио</a
+                >
+              </li>
+              <li class="navigation-list-item">
+                <a
+                  class="navigation-list-item-link link"
+                  href=""
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Контакты</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <ul class="header-address-list list">
+            <li class="header-address-list-item">
+              <address class="address">
+                <a
+                  class="header-address-list-item-link link"
+                  href="mailto:info@devstudio.com"
+                  aria-label="Отправить письмо"
+                >
+                  <svg class="icon-address envelope">
+                    <use href="./images/sprite.svg#icon-envelope"></use>
+                  </svg>
+                  info@devstudio.com
+                </a>
+              </address>
             </li>
-            <li class="navigation-list-item">
-              <a
-                class="navigation-list-item-link link"
-                href="./portfolio.html"
-                target="_blank"
-                rel="noreferrer noopener"
-                >Портфолио</a
-              >
-            </li>
-            <li class="navigation-list-item">
-              <a
-                class="navigation-list-item-link link"
-                href=""
-                target="_blank"
-                rel="noreferrer noopener"
-                >Контакты</a
-              >
+            <li class="header-address-list-item">
+              <address class="address">
+                <a
+                  class="header-address-list-item-link link"
+                  href="tel:+380961111111"
+                  aria-label="Позвонить"
+                >
+                  <svg class="icon-address smartphone">
+                    <use href="./images/sprite.svg#icon-smartphone"></use>
+                  </svg>
+                  +38 096 111 11 11
+                </a>
+              </address>
             </li>
           </ul>
-        </nav>
-
-        <ul class="header-address-list list">
-          <li class="header-address-list-item">
-            <address class="address">
-              <a
-                class="header-address-list-item-link link"
-                href="mailto:info@devstudio.com"
-                aria-label="Отправить письмо"
-              >
-                <svg class="icon-address envelope">
-                  <use href="./images/sprite.svg#icon-envelope"></use>
-                </svg>
-                info@devstudio.com
-              </a>
-            </address>
-          </li>
-          <li class="header-address-list-item">
-            <address class="address">
-              <a
-                class="header-address-list-item-link link"
-                href="tel:+380961111111"
-                aria-label="Позвонить"
-              >
-                <svg class="icon-address smartphone">
-                  <use href="./images/sprite.svg#icon-smartphone"></use>
-                </svg>
-                +38 096 111 11 11
-              </a>
-            </address>
-          </li>
-        </ul>
+        </div>
       </div>
     </header>
 
@@ -103,7 +125,7 @@
       </section>
 
       <!-- Особенности -->
-      <section class="features">
+      <section class="features section">
         <div class="container">
           <h2 class="visually-hidden">Особенности</h2>
           <ul class="features-list list">
@@ -168,37 +190,79 @@
           <h2 class="title">Чем мы занимаемся</h2>
           <ul class="activity-list list">
             <li class="activity-list-item">
-              <img
-                class="activity-list-item-img"
-                src="./images/img-activity/activity-1.jpg"
-                alt="Человек печатает на клавиатуре"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/img-activity/activity-1.webp    1x,
+                    ./images/img-activity/activity-1@2x.webp 2x,
+                    ./images/img-activity/activity-1@3x.webp 3x
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  srcset="
+                    ./images/img-activity/activity-1.jpg    1x,
+                    ./images/img-activity/activity-1@2x.jpg 2x,
+                    ./images/img-activity/activity-1@3x.jpg 3x
+                  "
+                  src="./images/img-activity/activity-1.jpg"
+                  alt="Человек печатает на клавиатуре"
+                />
+              </picture>
+
               <p class="activity-list-item-description">
                 Десктопные приложения
               </p>
             </li>
 
             <li class="activity-list-item">
-              <img
-                class="activity-list-item-img"
-                src="./images/img-activity/activity-2.jpg"
-                alt="Смартфон в руке"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/img-activity/activity-2.webp    1x,
+                    ./images/img-activity/activity-2@2x.webp 2x,
+                    ./images/img-activity/activity-2@3x.webp 3x
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  srcset="
+                    ./images/img-activity/activity-2.jpg    1x,
+                    ./images/img-activity/activity-2@2x.jpg 2x,
+                    ./images/img-activity/activity-2@3x.jpg 3x
+                  "
+                  src="./images/img-activity/activity-2.jpg"
+                  alt="Смартфон в руке"
+                />
+              </picture>
+
               <p class="activity-list-item-description">Мобильные приложения</p>
             </li>
 
             <li class="activity-list-item">
-              <img
-                class="activity-list-item-img"
-                src="./images/img-activity/activity-3.jpg"
-                alt="Планшет"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/img-activity/activity-3.webp    1x,
+                    ./images/img-activity/activity-3@2x.webp 2x,
+                    ./images/img-activity/activity-3@3x.webp 3x
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  srcset="
+                    ./images/img-activity/activity-3.jpg    1x,
+                    ./images/img-activity/activity-3@2x.jpg 2x,
+                    ./images/img-activity/activity-3@3x.jpg 3x
+                  "
+                  src="./images/img-activity/activity-3.jpg"
+                  alt="Планшет"
+                />
+              </picture>
+
               <p class="activity-list-item-description">Дизайнерские решения</p>
             </li>
           </ul>
@@ -460,7 +524,7 @@
       </section>
 
       <!-- Постоянные клиенты -->
-      <section class="customers section">
+      <!-- <section class="customers section">
         <div class="container">
           <h2 class="title">Постоянные клиенты</h2>
           <ul class="customers-list list">
@@ -549,11 +613,11 @@
             </li>
           </ul>
         </div>
-      </section>
+      </section> -->
     </main>
 
     <!-- Подвал -->
-    <footer class="footer">
+    <!-- <footer class="footer">
       <div class="container">
         <div class="footer-address-container holder">
           <a class="logo inverse link" href="#logo" lang="en">
@@ -662,7 +726,7 @@
           </form>
         </div>
       </div>
-    </footer>
+    </footer> -->
 
     <!-- Модальное окно -->
     <div class="backdrop is-hidden" data-modal>
@@ -760,5 +824,6 @@
     </div>
 
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

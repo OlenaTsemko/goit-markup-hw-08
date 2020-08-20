@@ -25,25 +25,21 @@
 
   background-color: $background-footer-color;
 
-  > .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-
-  .holder:not(:last-child) {
-    margin-right: 30px;
-  }
+  // > .container {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: baseline;
+  // }
 }
 
-.footer-address-container,
-.footer-social-list-container {
-  flex-basis: 25%;
-}
+// .footer-address-container,
+// .footer-social-list-container {
+//   flex-basis: 25%;
+// }
 
-.footer-form-container {
-  flex-basis: 50%;
-}
+// .footer-form-container {
+//   flex-basis: 50%;
+// }
 
 /* Футер адресс контейнер */
 .footer-address-list-item:not(:last-child) {
@@ -73,9 +69,7 @@
 }
 
 /* Футер социал.ссылки контейнер */
-.footer .social-list {
-  width: 206px;
-}
+
 .footer-social-list-container .text,
 .footer-form-container .text {
   display: block;
@@ -103,8 +97,8 @@
 
 /* Футер форм контейнер */
 .footer-form {
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
 
   color: #ffffff;
 }
@@ -113,7 +107,7 @@
   margin-right: 12px;
   padding: 15px 16px;
 
-  width: 358px;
+  max-width: 358px;
   height: 50px;
 
   @include fontData(400, 16px, 1.25);

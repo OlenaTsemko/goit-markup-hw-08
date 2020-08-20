@@ -1,21 +1,4 @@
 /* Особенности */
-.features {
-  padding-top: 94px;
-}
-
-.features-list {
-  display: flex;
-  justify-content: space-between;
-}
-
-.features-list-item {
-  width: 270px;
-
-  &:not(:last-child) {
-    margin-right: 30px;
-  }
-}
-
 .icon-features {
   width: 70px;
   height: 70px;
@@ -38,7 +21,10 @@
 }
 
 .features-icon-box {
-  padding: 25px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   margin-bottom: 30px;
 
   border-radius: 4px;
@@ -51,14 +37,56 @@
   margin-bottom: 10px;
 
   @include fontData(700, 14px, 1.14);
-
   text-transform: uppercase;
   color: $title-color;
 }
 
 .features-description {
-  margin-top: 0;
-  margin-bottom: 0;
-
   @include fontData(400, 14px, 1.71);
+}
+
+@media screen and (max-width: 767px) {
+  .features-list-item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  .features-subtitle {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .features-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .features-list-item {
+    flex-basis: calc((100% - 30px) / 2);
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .features-list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .features-list-item {
+    width: 270px;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
 }
