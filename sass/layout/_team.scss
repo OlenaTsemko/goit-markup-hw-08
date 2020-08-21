@@ -1,13 +1,7 @@
 /* Команда */
-
 .team {
   background-color: $background-secondary-color;
 }
-
-// .team-list {
-//   display: flex;
-//   justify-content: space-between;
-// }
 
 .team-list-item {
   background-color: $background-main-color;
@@ -18,29 +12,28 @@
 
 .team-list-item-info {
   padding-top: 30px;
-  padding-right: 32px;
   padding-bottom: 24px;
-  padding-left: 32px;
+
+  text-align: center;
 
   overflow: hidden;
 }
 
-.team-list-item-name,
-.team-list-item-position {
-  @include fontData(500, 16px, 1.19);
-
-  text-align: center;
-  color: $title-color;
-}
-
 .team-list-item-name {
+  margin-bottom: 10px;
+
+  @include fontData(500, 16px, 1.19);
+  color: $title-color;
+
   .team-list-item:hover & {
     animation: fadeInLeft 1000ms;
   }
 }
 
 .team-list-item-position {
-  font-weight: 400;
+  margin-bottom: 16px;
+
+  @include fontData(400, 16px, 1.19);
   color: $primary-text-color;
 
   .team-list-item:hover & {
@@ -48,24 +41,44 @@
   }
 }
 
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+@media screen and (max-width: 767px) {
+  .team-list-item:not(:last-child) {
+    margin-bottom: 30px;
   }
 }
 
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .team-list {
+    display: flex;
+    flex-wrap: wrap;
   }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+
+  .team-list-item {
+    flex-basis: calc((100% - 30px) / 2);
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .team-list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .team-list-item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  .team-list-item-info {
+    padding: 30px 32px;
   }
 }
