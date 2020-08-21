@@ -1,18 +1,18 @@
 /* Постоянные клиенты */
-// .customers-list {
-//   display: flex;
-//   justify-content: space-between;
-// }
+.customers-list {
+  display: flex;
+}
+
 .customers-list-item-link {
   display: flex;
   justify-content: center;
   align-items: center;
 
+  height: 90px;
+
   border: 1px solid #afb1b8;
   border-radius: 4px;
-
-  width: 170px;
-  height: 90px;
+  outline: none;
   color: #afb1b8;
 
   transition: color 250ms $transition-timing-function,
@@ -23,10 +23,6 @@
     color: $accent-color;
     border: 1px solid $accent-color;
   }
-}
-
-.customers-list-item:not(:last-child) {
-  margin-right: 30px;
 }
 
 .icon-client-logo {
@@ -44,20 +40,46 @@
   }
 }
 
-@keyframes swing {
-  20% {
-    transform: rotate3d(0, 0, 1, 15deg);
+@media screen and (max-width: 1199px) {
+  .customers-list {
+    flex-wrap: wrap;
   }
-  40% {
-    transform: rotate3d(0, 0, 1, -10deg);
+}
+
+@media screen and (max-width: 767px) {
+  .customers-list-item {
+    flex-basis: calc((100% - 30px) / 2);
+
+    &:not(:nth-child(2n)) {
+      margin-right: 30px;
+    }
+
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
   }
-  60% {
-    transform: rotate3d(0, 0, 1, 5deg);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .customers-list-item {
+    flex-basis: calc((100% - 60px) / 3);
+
+    &:not(:nth-child(3n)) {
+      margin-right: 30px;
+    }
+
+    &:not(:nth-last-child(-n + 3)) {
+      margin-bottom: 30px;
+    }
   }
-  80% {
-    transform: rotate3d(0, 0, 1, -5deg);
-  }
-  100% {
-    transform: rotate3d(0, 0, 1, 0deg);
+}
+
+@media screen and (min-width: 1200px) {
+  .customers-list-item {
+    flex-basis: calc((100% - 150px) / 6);
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
   }
 }

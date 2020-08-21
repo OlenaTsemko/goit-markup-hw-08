@@ -66,6 +66,17 @@
       margin-bottom: 0;
     }
   }
+
+  .team-thumb {
+    width: 354px;
+    height: 374px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -80,5 +91,16 @@
 
   .team-list-item-info {
     padding: 30px 32px;
+  }
+
+  .team-thumb {
+    width: 270px;
+    height: 260px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }

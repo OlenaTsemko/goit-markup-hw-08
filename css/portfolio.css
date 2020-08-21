@@ -365,6 +365,9 @@ img {
   .navigation-list-item-link {
     padding-top: 32px;
     padding-bottom: 32px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
   }
   .navigation-list-item:not(:last-child) {
     margin-right: 50px;
@@ -374,11 +377,6 @@ img {
   }
   .header-address-list-item:not(:last-child) {
     margin-bottom: 10px;
-  }
-  .navigation-list-item-link {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
   }
   .menu-btn {
     display: none;
@@ -407,6 +405,8 @@ img {
     margin-right: 30px;
   }
   .header-address-list-item-link {
+    padding-top: 32px;
+    padding-bottom: 32px;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;

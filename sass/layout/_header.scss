@@ -94,7 +94,6 @@
 
     background-color: transparent;
     border: none;
-    // outline: none;
     cursor: pointer;
 
     overflow: hidden;
@@ -203,6 +202,7 @@
   .navigation-list-item-link {
     padding-top: 32px;
     padding-bottom: 32px;
+    @include fontData(500, 14px, 1.14);
   }
 
   .navigation-list-item:not(:last-child) {
@@ -214,10 +214,6 @@
 
   .header-address-list-item:not(:last-child) {
     margin-bottom: 10px;
-  }
-
-  .navigation-list-item-link {
-    @include fontData(500, 14px, 1.14);
   }
 
   .menu-btn {
@@ -248,6 +244,8 @@
   }
 
   .header-address-list-item-link {
+    padding-top: 32px;
+    padding-bottom: 32px;
     @include fontData(500, 14px, 1.14);
   }
 
