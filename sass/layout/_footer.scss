@@ -3,6 +3,10 @@
   margin-bottom: 20px;
   color: #ffffff;
 
+  @media screen and (max-width: 1199px) {
+    transform-origin: top center;
+  }
+
   transform-origin: top left;
 
   &:hover,
@@ -45,6 +49,11 @@
   color: rgba(255, 255, 255, 0.6);
 
   transform: scale(1);
+
+  @media screen and (max-width: 1199px) {
+    transform-origin: top center;
+  }
+
   transform-origin: top left;
   transition: transform 250ms $transition-timing-function,
     color 250ms $transition-timing-function;
@@ -134,7 +143,11 @@
   align-items: center;
   padding: 10px 28px;
 
-  transform-origin: top left;
+  @media screen and (max-width: 1199px) {
+    transform-origin: top center;
+  }
+
+  transform-origin: center;
 }
 .subscribe {
   margin-right: 10px;

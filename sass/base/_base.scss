@@ -19,6 +19,8 @@ body {
 .link {
   display: block;
   text-decoration: none;
+
+  outline-color: $accent-color;
 }
 
 .list {
